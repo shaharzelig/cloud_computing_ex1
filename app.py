@@ -34,7 +34,7 @@ def parking_exit():
     total_time_in_minutes = (int(time.time()) - db_entry['time']) / 60
     total_amount_of_15_minutes = total_time_in_minutes / 15
     charge = total_amount_of_15_minutes * 2.5   # 2.5 USD for 15 minutes == 10 USD per hour
-    return jsonify({"parkingLot": entry['parkingLot'], "plate": entry['plate'], "charge": charge})
+    return jsonify({"parkingLot": db_entry['parkingLot'], "plate": db_entry['plate'], "charge": charge})
 
 
 if __name__ == '__main__':
